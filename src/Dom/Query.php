@@ -19,6 +19,7 @@ class Query
     protected $rules;
     protected $range = null;
     protected $ql;
+    protected $response;
     /**
      * @var Collection
      */
@@ -28,6 +29,24 @@ class Query
     public function __construct(QueryList $ql)
     {
         $this->ql = $ql;
+    }
+    
+    /**
+     * @return mixed
+     */
+    public function getResponse()
+    {
+        return $this->response;
+    }
+	
+	/**
+     * @param $response
+     * @return QueryList
+     */
+    public function setResponse($response)
+    {
+        $this->response = $response;
+        return $this->ql;
     }
 
     /**
